@@ -1,0 +1,24 @@
+Source: kitchen
+Section: python
+Priority: optional
+Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Uploaders: Simon Chopin <chopin.simon@gmail.com>
+Build-Depends: debhelper (>= 8), python-all (>= 2.6.6-3~), python-setuptools
+Standards-Version: 3.9.4
+X-Python-Version: >= 2.3
+Homepage: https://fedorahosted.org/kitchen/
+Vcs-Svn: svn://svn.debian.org/python-modules/packages/kitchen/trunk
+Vcs-Browser: http://svn.debian.org/viewsvn/python-modules/packages/kitchen/trunk/
+
+Package: python-kitchen
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}
+Description: Mix of useful Python code
+ The kitchen Python package aims at gathering in one place all the snippets of
+ code that the author originally carried around from project to project to ease
+ the development.
+ .
+ A non-exhaustive list of the features provided by kitchen:
+   * helpers for text and specifically unicode handling i18n support
+   * Compatibility layers from 2.3 'til 2.7.  A dictionary that treats unicode
+   * and str as different values
