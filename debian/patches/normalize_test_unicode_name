@@ -1,8 +1,8 @@
 Description: Normalize the locale names when testing i18n features
 Author: Simon Chopin <chopin.simon@gmail.com>
-Bug: <URL to the upstream bug report if any, implies patch has been forwarded, optional>
-Applied-Upstream: <version|URL|commit, identifies patches merged upstream, optional>
+Forwarded: https://lists.fedorahosted.org/pipermail/kitchen-devel/2013-April/000020.html
 Last-Update: 2013-04-23
+
 ---
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 --- a/tests/test_i18n.py

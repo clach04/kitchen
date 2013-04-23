@@ -9,8 +9,7 @@ ifeq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
 	localedef -f UTF-8 -i en_US ./debian/tmp/locales/en_US.UTF-8/
 	localedef -f UTF-8 -i pt_BR ./debian/tmp/locales/pt_BR.UTF-8/
 	localedef -f ISO-8859-1 -i pt_BR ./debian/tmp/locales/pt_BR.ISO-8859-1/
-	set -e
-	echo $(shell pwd)
+	set -e; \
 	for py in $(shell pyversions -r); do \
 		LOCPATH=$(CURDIR)/debian/tmp/locales/ $$py /usr/bin/nosetests tests; \
 	done
