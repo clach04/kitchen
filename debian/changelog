@@ -1,5 +1,6 @@
 kitchen (1.1.1-1) UNRELEASED; urgency=low
 
   * Initial release. (Closes: #705930)
+  * Patch the test set to use consistent locale naming (forwarded)
 
  -- Simon Chopin <chopin.simon@gmail.com>  Mon, 22 Apr 2013 21:16:39 +0200

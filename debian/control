@@ -3,7 +3,13 @@ Section: python
 Priority: optional
 Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 Uploaders: Simon Chopin <chopin.simon@gmail.com>
-Build-Depends: debhelper (>= 8), python-all (>= 2.6.6-3~), python-setuptools
+Build-Depends:
+ debhelper (>= 8),
+ python-all (>= 2.6.6-3~),
+ libc-bin,
+ locales,
+ python-nose,
+ python-setuptools
 Standards-Version: 3.9.4
 X-Python-Version: >= 2.3
 Homepage: https://fedorahosted.org/kitchen/
@@ -20,5 +26,5 @@ Description: Mix of useful Python code
  .
  A non-exhaustive list of the features provided by kitchen:
    * helpers for text and specifically unicode handling i18n support
-   * Compatibility layers from 2.3 'til 2.7.  A dictionary that treats unicode
-   * and str as different values
+   * Compatibility layers from 2.3 'til 2.7.
+   * A dictionary that treats unicode and str strings as different values
