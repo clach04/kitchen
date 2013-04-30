@@ -31,5 +31,5 @@ New API Feature                       Ver
 
 .. seealso::
 
-    The stdlib :mod:`subprocess` documenation
+    The stdlib :mod:`subprocess` documentation
         For complete documentation on how to use subprocess

@@ -295,8 +295,8 @@ class DummyTranslations(object, gettext.NullTranslations):
     def _reencode_if_necessary(self, message, output_encoding):
         '''Return a byte string that's valid in a specific charset.
 
-        .. warning:: This method may mangle the message if the inpput encoding
-            is not known or the message isn't represntable in the chosen
+        .. warning:: This method may mangle the message if the input encoding
+            is not known or the message isn't representable in the chosen
             output encoding.
         '''
         valid = False
@@ -721,7 +721,7 @@ def get_translation_object(domain, localedirs=tuple(), languages=None,
         objects by default.  These are superior to the
         :class:`gettext.GNUTranslations` and :class:`gettext.NullTranslations`
         objects because they are consistent in the string type they return and
-        they fix several issues that can causethe |stdlib|_ objects to throw
+        they fix several issues that can cause the |stdlib|_ objects to throw
         :exc:`UnicodeError`.
     2. This function takes multiple directories to search for
         :term:`message catalogs`.

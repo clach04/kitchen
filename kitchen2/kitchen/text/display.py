@@ -3,7 +3,7 @@
 # Copyright (c) 2013 Red Hat, Inc.
 # Copyright (c) 2010 Ville Skyttä
 # Copyright (c) 2009 Tim Lauridsen
-# Copyright (c) 2007 Marcus Kuhn
+# Copyright (c) 2007 Markus Kuhn
 #
 # kitchen is free software; you can redistribute it and/or modify it under the
 # terms of the GNU Lesser General Public License as published by the Free
@@ -20,7 +20,7 @@
 #
 # Authors:
 #   James Antill <james@fedoraproject.org>
-#   Marcus Kuhn
+#   Markus Kuhn
 #   Toshio Kuratomi <toshio@fedoraproject.org>
 #   Tim Lauridsen
 #   Ville Skyttä
@@ -211,7 +211,7 @@ def _generate_combining_table():
     This is used to generate the :data:`~kitchen.text.display._COMBINING`
     table.
     '''
-    # Marcus Kuhn's sorted list of non-overlapping intervals of non-spacing
+    # Markus Kuhn's sorted list of non-overlapping intervals of non-spacing
     # characters generated ifrom Unicode 5.0 data by:
     # "uniset +cat=Me +cat=Mn +cat=Cf -00AD +1160-11FF +200B c"
     markus_kuhn_combining_5_0 = (
