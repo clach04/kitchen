@@ -500,7 +500,7 @@ def exception_to_unicode(exc, converters=EXCEPTION_CONVERTERS):
     for func in converters:
         try:
             msg = func(exc)
-        except:
+        except Exception:
             pass
         else:
             break
@@ -532,7 +532,7 @@ def exception_to_bytes(exc, converters=EXCEPTION_CONVERTERS):
     for func in converters:
         try:
             msg = func(exc)
-        except:
+        except Exception:
             pass
         else:
             break
