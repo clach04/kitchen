@@ -1,7 +1,13 @@
 #!/usr/bin/make -f
+UPSTREAM= $(shell dpkg-parsechangelog | egrep '^Version: ' | sed -r 's/Version: (.*)-[0-9a-zA-Z~+.]+/\1/')
 
 %:
 	dh $@ --with python2
+override_dh_install:
+	dh_install
+	for py in $(shell pyversions -r); do \
+		rm -f debian/python-kitchen/usr/lib/$$py/dist-packages/kitchen-$(UPSTREAM).egg-info/SOURCES.txt; \
+	done
 
 override_dh_auto_test:
 ifeq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
@@ -15,6 +21,3 @@ ifeq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
 	done
 endif
 
-override_dh_auto_clean:
-	rm -rf @test* kitchen.egg-info
-	dh_auto_clean

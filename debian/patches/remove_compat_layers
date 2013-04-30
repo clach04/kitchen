@@ -1,0 +1,39 @@
+Description: Remove the pycompat* submodules
+ Those are not needed in Debian as we already ship the latest runtime version.
+Author: Simon Chopin <chopin.simon@gmail.com>
+Forwarded: not-needed
+Last-Update: 2013-04-30
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/setup.py
++++ b/setup.py
+@@ -52,6 +52,6 @@
+             'Topic :: Software Development :: Libraries :: Python Modules',
+             'Topic :: Text Processing :: General',
+           ],
+-      packages=find_packages(),
++      packages=find_packages(exclude=['*pycompat*']),
+       data_files=[],
+ )
+--- a/kitchen/text/converters.py
++++ b/kitchen/text/converters.py
+@@ -53,7 +53,7 @@
+ # We need to access b_() for localizing our strings but we'll end up with
+ # a circular import if we import it directly.
+ import kitchen as k
+-from kitchen.pycompat24 import sets
++import sets
+ sets.add_builtin_set()
+ 
+ from kitchen.text.exceptions import ControlCharError, XmlEncodeError
+--- a/kitchen/text/misc.py
++++ b/kitchen/text/misc.py
+@@ -40,7 +40,7 @@
+ # We need to access b_() for localizing our strings but we'll end up with
+ # a circular import if we import it directly.
+ import kitchen as k
+-from kitchen.pycompat24 import sets
++import sets
+ from kitchen.text.exceptions import ControlCharError
+ 
+ sets.add_builtin_set()

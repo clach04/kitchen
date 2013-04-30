@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 Uploaders: Simon Chopin <chopin.simon@gmail.com>
 Build-Depends:
- debhelper (>= 8),
+ debhelper (>= 8.1),
  python-all (>= 2.6.6-3~),
  locales (>= 0),
  python-nose,
@@ -18,12 +18,11 @@ Vcs-Browser: http://svn.debian.org/viewsvn/python-modules/packages/kitchen/trunk
 Package: python-kitchen
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends}
-Description: Mix of useful Python code
+Description: mix of useful Python code
  The kitchen Python package aims at gathering in one place all the snippets of
  code that the author originally carried around from project to project to ease
  the development.
  .
  A non-exhaustive list of the features provided by kitchen:
    * helpers for text and specifically unicode handling i18n support
-   * Compatibility layers from 2.3 'til 2.7.
-   * A dictionary that treats unicode and str strings as different values
+   * a dictionary that treats unicode and str strings as different values

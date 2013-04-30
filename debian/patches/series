@@ -1,1 +1,4 @@
 normalize_test_unicode_name
+fix_typos
+remove_compat_layers
+explicit_Exception_catching
