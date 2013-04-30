@@ -33,7 +33,7 @@ In python-2.x, there's two types that deal with text.
     with byte :class:`str` as those devices are going to need to deal with
     concrete implementations of what bytes represent your abstract characters.
 
-In the python2 world many APIs use these two classes interchangably but there
+In the python2 world many APIs use these two classes interchangeably but there
 are several important APIs where only one or the other will do the right
 thing.  When you give the wrong type of string to an API that wants the other
 type, you may end up with an exception being raised (:exc:`UnicodeDecodeError`
@@ -122,7 +122,7 @@ we're all set::
 
 So that was simple, right?  Well... there's one gotcha that makes things a bit
 harder to debug sometimes.  When you attempt to write non-:term:`ASCII`
-:class:`unicode` strings to a file-like object you get a traceback everytime.
+:class:`unicode` strings to a file-like object you get a traceback every time.
 But what happens when you use :func:`print`?  The terminal is a file-like object
 so it should raise an exception right?  The answer to that is....
 *sometimes*:
@@ -539,7 +539,7 @@ a short example that uses many kitchen functions to do its work::
             # Note that we do not let implici type conversion from str to
             # unicode transform b_filename into a unicode string.  That might
             # fail as python would use the ASCII filename.  Instead we use
-            # to_unicode() to explictly transform in a way that we know will
+            # to_unicode() to explicitly transform in a way that we know will
             # not traceback.
             print _(u'filename: %s') % to_unicode(b_filename)
             print _(u'file size: %s') % size

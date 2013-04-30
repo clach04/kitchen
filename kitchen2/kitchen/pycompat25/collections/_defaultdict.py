@@ -73,7 +73,7 @@ the defaultdict class provided by python-2.5 and above.
 
 # Pylint disabled messages
 #
-# :C0103: We're defnining a compatible class name therefore we need to match
+# :C0103: We're defining a compatible class name therefore we need to match
 #   the format of that name.
 
 import types

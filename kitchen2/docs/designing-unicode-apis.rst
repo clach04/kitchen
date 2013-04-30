@@ -581,7 +581,7 @@ you should consider when designing a :class:`unicode`-only API:
    that you may not have thought of.  Corner cases in these other places may
    mean that processing bytes is desirable.
 2. In python2, byte :class:`str` and :class:`unicode` are often used
-   interchangably with each other.  That means that people programming against
+   interchangeably with each other.  That means that people programming against
    your API may have received :class:`str` from some other API and it would be
    most convenient for their code if your API accepted it.
 
