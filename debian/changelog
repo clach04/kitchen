@@ -1,4 +1,4 @@
-kitchen (1.1.1-1) UNRELEASED; urgency=low
+kitchen (1.1.1-1) unstable; urgency=low
 
   [ Simon Chopin ]
   * Initial release. (Closes: #705930)
@@ -7,4 +7,4 @@ kitchen (1.1.1-1) UNRELEASED; urgency=low
   [ Jakub Wilk ]
   * Use canonical URIs for Vcs-* fields.
 
- -- Jakub Wilk <jwilk@debian.org>  Sun, 05 May 2013 16:01:06 +0200
+ -- Simon Chopin <chopin.simon@gmail.com>  Mon, 06 May 2013 11:45:55 +0200
