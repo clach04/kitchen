@@ -1,4 +1,4 @@
-kitchen (1.1.1-1) unstable; urgency=low
+kitchen (1.1.1-1) UNRELEASED; urgency=low
 
   [ Simon Chopin ]
   * Initial release. (Closes: #705930)
