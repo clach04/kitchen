@@ -1,0 +1,36 @@
+From f2639ec4f393da7c790000b29525e331c81f2789 Mon Sep 17 00:00:00 2001
+From: Simon Chopin <chopin.simon@gmail.com>
+Date: Tue, 30 Apr 2013 18:27:15 +0200
+Subject: [PATCH] Make kitchen.text.converters.exception_to_* not swallow
+ general errors such as KeyboardInterrupt
+Bug: https://fedorahosted.org/kitchen/ticket/9
+
+---
+ kitchen/text/converters.py |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/kitchen/text/converters.py b/kitchen/text/converters.py
+index 8b5aac6..0fb882f 100644
+--- a/kitchen/text/converters.py
++++ b/kitchen/text/converters.py
+@@ -502,7 +502,7 @@ def exception_to_unicode(exc, converters=EXCEPTION_CONVERTERS):
+     for func in converters:
+         try:
+             msg = func(exc)
+-        except:
++        except Exception:
+             pass
+         else:
+             break
+@@ -534,7 +534,7 @@ def exception_to_bytes(exc, converters=EXCEPTION_CONVERTERS):
+     for func in converters:
+         try:
+             msg = func(exc)
+-        except:
++        except Exception:
+             pass
+         else:
+             break
+-- 
+1.7.10.4
+

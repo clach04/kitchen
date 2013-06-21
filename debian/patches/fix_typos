@@ -1,0 +1,141 @@
+From 9a6c2b3ee1be305e6260b3f1e1fc15abc1249656 Mon Sep 17 00:00:00 2001
+From: Simon Chopin <chopin.simon@gmail.com>
+Date: Tue, 30 Apr 2013 17:28:27 +0200
+Subject: [PATCH] Fix several typos
+Bug: https://fedorahosted.org/kitchen/ticket/8
+
+---
+ docs/api-pycompat27.rst                        |    2 +-
+ docs/designing-unicode-apis.rst                |    2 +-
+ docs/hacking.rst                               |    2 +-
+ docs/unicode-frustrations.rst                  |    4 ++--
+ kitchen/i18n/__init__.py                       |    6 +++---
+ kitchen/pycompat25/collections/_defaultdict.py |    2 +-
+ kitchen/text/display.py                        |    6 +++---
+ releaseutils.py                                |    2 +-
+ 8 files changed, 13 insertions(+), 13 deletions(-)
+
+--- a/docs/api-pycompat27.rst
++++ b/docs/api-pycompat27.rst
+@@ -31,5 +31,5 @@
+ 
+ .. seealso::
+ 
+-    The stdlib :mod:`subprocess` documenation
++    The stdlib :mod:`subprocess` documentation
+         For complete documentation on how to use subprocess
+--- a/docs/designing-unicode-apis.rst
++++ b/docs/designing-unicode-apis.rst
+@@ -581,7 +581,7 @@
+    that you may not have thought of.  Corner cases in these other places may
+    mean that processing bytes is desirable.
+ 2. In python2, byte :class:`str` and :class:`unicode` are often used
+-   interchangably with each other.  That means that people programming against
++   interchangeably with each other.  That means that people programming against
+    your API may have received :class:`str` from some other API and it would be
+    most convenient for their code if your API accepted it.
+ 
+--- a/docs/hacking.rst
++++ b/docs/hacking.rst
+@@ -272,7 +272,7 @@
+ Criteria for subpackages in kitchen
+ ===================================
+ 
+-Supackages within kitchen should meet these criteria:
++Subpackages within kitchen should meet these criteria:
+ 
+ * Generally useful or needed for other pieces of kitchen.
+ 
+--- a/docs/unicode-frustrations.rst
++++ b/docs/unicode-frustrations.rst
+@@ -33,7 +33,7 @@
+     with byte :class:`str` as those devices are going to need to deal with
+     concrete implementations of what bytes represent your abstract characters.
+ 
+-In the python2 world many APIs use these two classes interchangably but there
++In the python2 world many APIs use these two classes interchangeably but there
+ are several important APIs where only one or the other will do the right
+ thing.  When you give the wrong type of string to an API that wants the other
+ type, you may end up with an exception being raised (:exc:`UnicodeDecodeError`
+@@ -122,7 +122,7 @@
+ 
+ So that was simple, right?  Well... there's one gotcha that makes things a bit
+ harder to debug sometimes.  When you attempt to write non-:term:`ASCII`
+-:class:`unicode` strings to a file-like object you get a traceback everytime.
++:class:`unicode` strings to a file-like object you get a traceback every time.
+ But what happens when you use :func:`print`?  The terminal is a file-like object
+ so it should raise an exception right?  The answer to that is....
+ *sometimes*:
+--- a/kitchen/i18n/__init__.py
++++ b/kitchen/i18n/__init__.py
+@@ -251,8 +251,8 @@
+     def _reencode_if_necessary(self, message, output_encoding):
+         '''Return a byte string that's valid in a specific charset.
+ 
+-        .. warning:: This method may mangle the message if the inpput encoding
+-            is not known or the message isn't represntable in the chosen
++        .. warning:: This method may mangle the message if the input encoding
++            is not known or the message isn't representable in the chosen
+             output encoding.
+         '''
+         valid = False
+@@ -668,7 +668,7 @@
+         objects by default.  These are superior to the
+         :class:`gettext.GNUTranslations` and :class:`gettext.NullTranslations`
+         objects because they are consistent in the string type they return and
+-        they fix several issues that can causethe |stdlib|_ objects to throw
++        they fix several issues that can cause the |stdlib|_ objects to throw
+         :exc:`UnicodeError`.
+     2. This function takes multiple directories to search for
+         :term:`message catalogs`.
+--- a/kitchen/pycompat25/collections/_defaultdict.py
++++ b/kitchen/pycompat25/collections/_defaultdict.py
+@@ -73,7 +73,7 @@
+ 
+ # Pylint disabled messages
+ #
+-# :C0103: We're defnining a compatible class name therefore we need to match
++# :C0103: We're defining a compatible class name therefore we need to match
+ #   the format of that name.
+ 
+ import types
+--- a/kitchen/text/display.py
++++ b/kitchen/text/display.py
+@@ -3,7 +3,7 @@
+ # Copyright (c) 2010 Red Hat, Inc.
+ # Copyright (c) 2010 Ville Skyttä
+ # Copyright (c) 2009 Tim Lauridsen
+-# Copyright (c) 2007 Marcus Kuhn
++# Copyright (c) 2007 Markus Kuhn
+ #
+ # kitchen is free software; you can redistribute it and/or modify it under the
+ # terms of the GNU Lesser General Public License as published by the Free
+@@ -20,7 +20,7 @@
+ #
+ # Authors:
+ #   James Antill <james@fedoraproject.org>
+-#   Marcus Kuhn
++#   Markus Kuhn
+ #   Toshio Kuratomi <toshio@fedoraproject.org>
+ #   Tim Lauridsen
+ #   Ville Skyttä
+@@ -210,7 +210,7 @@
+     This is used to generate the :data:`~kitchen.text.display._COMBINING`
+     table.
+     '''
+-    # Marcus Kuhn's sorted list of non-overlapping intervals of non-spacing
++    # Markus Kuhn's sorted list of non-overlapping intervals of non-spacing
+     # characters generated ifrom Unicode 5.0 data by:
+     # "uniset +cat=Me +cat=Mn +cat=Cf -00AD +1160-11FF +200B c"
+     markus_kuhn_combining_5_0 = (
+--- a/releaseutils.py
++++ b/releaseutils.py
+@@ -35,7 +35,7 @@
+         shutil.rmtree('locale')
+     except OSError, e:
+         # If the error is that locale does not exist, we're okay.  We're
+-        # deleting it here, afterall
++        # deleting it here, after all
+         if e.errno != 2:
+             raise
+ 

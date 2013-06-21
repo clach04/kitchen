@@ -1,0 +1,4 @@
+The compatibility modules have been removed from the Debian package as they aim
+to bring new features to old versions of Python, while we have the newer
+versions available in our repositories, and did so by using modules from stdlib,
+thus were difficult to support.
