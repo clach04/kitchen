@@ -53,8 +53,6 @@ import xml.sax.saxutils
 # We need to access b_() for localizing our strings but we'll end up with
 # a circular import if we import it directly.
 import kitchen as k
-from kitchen.pycompat24 import sets
-sets.add_builtin_set()
 
 from kitchen.text.exceptions import ControlCharError, XmlEncodeError
 from kitchen.text.misc import guess_encoding, html_entities_unescape, \

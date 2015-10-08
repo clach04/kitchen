@@ -4,8 +4,6 @@ from nose import tools
 import os
 import types
 import warnings
-from kitchen.pycompat24.sets import add_builtin_set
-add_builtin_set()
 
 def logit(msg):
     log = open('/var/tmp/test.log', 'a')

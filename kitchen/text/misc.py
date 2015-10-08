@@ -40,10 +40,7 @@ except ImportError:
 # We need to access b_() for localizing our strings but we'll end up with
 # a circular import if we import it directly.
 import kitchen as k
-from kitchen.pycompat24 import sets
 from kitchen.text.exceptions import ControlCharError
-
-sets.add_builtin_set()
 
 # Define a threshold for chardet confidence.  If we fall below this we decode
 # byte strings we're guessing about as latin1
