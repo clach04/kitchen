@@ -13,7 +13,7 @@ import base_classes
 class TestI18N_UTF8(unittest.TestCase):
     def setUp(self):
         self.old_LC_ALL = os.environ.get('LC_ALL', None)
-        os.environ['LC_ALL'] = 'pt_BR.UTF8'
+        os.environ['LC_ALL'] = 'pt_BR.UTF-8'
 
     def tearDown(self):
         if self.old_LC_ALL:
@@ -331,7 +331,7 @@ class TestDummyTranslations(base_classes.UnicodeTestData):
 class TestI18N_Latin1(unittest.TestCase):
     def setUp(self):
         self.old_LC_ALL = os.environ.get('LC_ALL', None)
-        os.environ['LC_ALL'] = 'pt_BR.ISO8859-1'
+        os.environ['LC_ALL'] = 'pt_BR.ISO-8859-1'
 
     def tearDown(self):
         if self.old_LC_ALL:
@@ -357,7 +357,7 @@ class TestI18N_Latin1(unittest.TestCase):
 class TestNewGNUTranslationsNoMatch(TestDummyTranslations):
     def setUp(self):
         self.old_LC_ALL = os.environ.get('LC_ALL', None)
-        os.environ['LC_ALL'] = 'pt_BR.utf8'
+        os.environ['LC_ALL'] = 'pt_BR.UTF-8'
         self.translations = i18n.get_translation_object('test', ['%s/data/locale/' % os.path.dirname(__file__)])
 
     def tearDown(self):
@@ -370,7 +370,7 @@ class TestNewGNUTranslationsNoMatch(TestDummyTranslations):
 class TestNewGNURealTranslations_UTF8(unittest.TestCase):
     def setUp(self):
         self.old_LC_ALL = os.environ.get('LC_ALL', None)
-        os.environ['LC_ALL'] = 'pt_BR.UTF8'
+        os.environ['LC_ALL'] = 'pt_BR.UTF-8'
         self.translations = i18n.get_translation_object('test', ['%s/data/locale/' % os.path.dirname(__file__)])
 
     def tearDown(self):
@@ -455,7 +455,7 @@ class TestNewGNURealTranslations_UTF8(unittest.TestCase):
 class TestNewGNURealTranslations_Latin1(TestNewGNURealTranslations_UTF8):
     def setUp(self):
         self.old_LC_ALL = os.environ.get('LC_ALL', None)
-        os.environ['LC_ALL'] = 'pt_BR.ISO8859-1'
+        os.environ['LC_ALL'] = 'pt_BR.ISO-8859-1'
         self.translations = i18n.get_translation_object('test', ['%s/data/locale/' % os.path.dirname(__file__)])
 
     def tearDown(self):
@@ -511,7 +511,7 @@ class TestFallbackNewGNUTranslationsNoMatch(TestDummyTranslations):
 class TestFallbackNewGNURealTranslations_UTF8(unittest.TestCase):
     def setUp(self):
         self.old_LC_ALL = os.environ.get('LC_ALL', None)
-        os.environ['LC_ALL'] = 'pt_BR.UTF8'
+        os.environ['LC_ALL'] = 'pt_BR.UTF-8'
         self.translations = i18n.get_translation_object('test',
                 ['%s/data/locale/' % os.path.dirname(__file__),
                     '%s/data/locale-old' % os.path.dirname(__file__)])
@@ -598,7 +598,7 @@ class TestFallbackNewGNURealTranslations_UTF8(unittest.TestCase):
 class TestFallbackNewGNURealTranslations_Latin1(unittest.TestCase):
     def setUp(self):
         self.old_LC_ALL = os.environ.get('LC_ALL', None)
-        os.environ['LC_ALL'] = 'pt_BR.ISO8859-1'
+        os.environ['LC_ALL'] = 'pt_BR.ISO-8859-1'
         self.translations = i18n.get_translation_object('test',
                 ['%s/data/locale/' % os.path.dirname(__file__),
                     '%s/data/locale-old' % os.path.dirname(__file__)])
@@ -685,7 +685,7 @@ class TestFallbackNewGNURealTranslations_Latin1(unittest.TestCase):
 class TestFallback(unittest.TestCase):
     def setUp(self):
         self.old_LC_ALL = os.environ.get('LC_ALL', None)
-        os.environ['LC_ALL'] = 'pt_BR.ISO8859-1'
+        os.environ['LC_ALL'] = 'pt_BR.ISO-8859-1'
         self.gtranslations = i18n.get_translation_object('test',
                 ['%s/data/locale/' % os.path.dirname(__file__),
                     '%s/data/locale-old' % os.path.dirname(__file__)])
@@ -721,7 +721,7 @@ class TestFallback(unittest.TestCase):
 class TestDefaultLocaleDir(unittest.TestCase):
     def setUp(self):
         self.old_LC_ALL = os.environ.get('LC_ALL', None)
-        os.environ['LC_ALL'] = 'pt_BR.UTF8'
+        os.environ['LC_ALL'] = 'pt_BR.UTF-8'
         self.old_DEFAULT_LOCALEDIRS = i18n._DEFAULT_LOCALEDIR
         i18n._DEFAULT_LOCALEDIR = '%s/data/locale/' % os.path.dirname(__file__)
         self.translations = i18n.get_translation_object('test')
