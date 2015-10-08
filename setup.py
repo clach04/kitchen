@@ -52,6 +52,6 @@ setup(name='kitchen',
             'Topic :: Software Development :: Libraries :: Python Modules',
             'Topic :: Text Processing :: General',
           ],
-      packages=find_packages(),
+      packages=find_packages(exclude=['*pycompat*']),
       data_files=[],
 )

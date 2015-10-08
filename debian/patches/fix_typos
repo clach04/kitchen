@@ -1,32 +1,38 @@
-From 9a6c2b3ee1be305e6260b3f1e1fc15abc1249656 Mon Sep 17 00:00:00 2001
+From 5691cd2707367cb46b7bda425d093b3f39089bbf Mon Sep 17 00:00:00 2001
 From: Simon Chopin <chopin.simon@gmail.com>
 Date: Tue, 30 Apr 2013 17:28:27 +0200
-Subject: [PATCH] Fix several typos
+Subject: Fix several typos
+
 Bug: https://fedorahosted.org/kitchen/ticket/8
 
+Patch-Name: fix_typos
 ---
- docs/api-pycompat27.rst                        |    2 +-
- docs/designing-unicode-apis.rst                |    2 +-
- docs/hacking.rst                               |    2 +-
- docs/unicode-frustrations.rst                  |    4 ++--
- kitchen/i18n/__init__.py                       |    6 +++---
- kitchen/pycompat25/collections/_defaultdict.py |    2 +-
- kitchen/text/display.py                        |    6 +++---
- releaseutils.py                                |    2 +-
+ docs/api-pycompat27.rst                        | 2 +-
+ docs/designing-unicode-apis.rst                | 2 +-
+ docs/hacking.rst                               | 2 +-
+ docs/unicode-frustrations.rst                  | 4 ++--
+ kitchen/i18n/__init__.py                       | 6 +++---
+ kitchen/pycompat25/collections/_defaultdict.py | 2 +-
+ kitchen/text/display.py                        | 6 +++---
+ releaseutils.py                                | 2 +-
  8 files changed, 13 insertions(+), 13 deletions(-)
 
+diff --git a/docs/api-pycompat27.rst b/docs/api-pycompat27.rst
+index 6ef6db1..9654b31 100644
 --- a/docs/api-pycompat27.rst
 +++ b/docs/api-pycompat27.rst
-@@ -31,5 +31,5 @@
+@@ -31,5 +31,5 @@ New API Feature                       Ver
  
  .. seealso::
  
 -    The stdlib :mod:`subprocess` documenation
 +    The stdlib :mod:`subprocess` documentation
          For complete documentation on how to use subprocess
+diff --git a/docs/designing-unicode-apis.rst b/docs/designing-unicode-apis.rst
+index 24265fb..5c909a9 100644
 --- a/docs/designing-unicode-apis.rst
 +++ b/docs/designing-unicode-apis.rst
-@@ -581,7 +581,7 @@
+@@ -581,7 +581,7 @@ you should consider when designing a :class:`unicode`-only API:
     that you may not have thought of.  Corner cases in these other places may
     mean that processing bytes is desirable.
  2. In python2, byte :class:`str` and :class:`unicode` are often used
@@ -35,9 +41,11 @@ Bug: https://fedorahosted.org/kitchen/ticket/8
     your API may have received :class:`str` from some other API and it would be
     most convenient for their code if your API accepted it.
  
+diff --git a/docs/hacking.rst b/docs/hacking.rst
+index 9fbad1a..60f0ca6 100644
 --- a/docs/hacking.rst
 +++ b/docs/hacking.rst
-@@ -272,7 +272,7 @@
+@@ -272,7 +272,7 @@ version.
  Criteria for subpackages in kitchen
  ===================================
  
@@ -46,9 +54,11 @@ Bug: https://fedorahosted.org/kitchen/ticket/8
  
  * Generally useful or needed for other pieces of kitchen.
  
+diff --git a/docs/unicode-frustrations.rst b/docs/unicode-frustrations.rst
+index c46e797..1588107 100644
 --- a/docs/unicode-frustrations.rst
 +++ b/docs/unicode-frustrations.rst
-@@ -33,7 +33,7 @@
+@@ -33,7 +33,7 @@ In python-2.x, there's two types that deal with text.
      with byte :class:`str` as those devices are going to need to deal with
      concrete implementations of what bytes represent your abstract characters.
  
@@ -57,7 +67,7 @@ Bug: https://fedorahosted.org/kitchen/ticket/8
  are several important APIs where only one or the other will do the right
  thing.  When you give the wrong type of string to an API that wants the other
  type, you may end up with an exception being raised (:exc:`UnicodeDecodeError`
-@@ -122,7 +122,7 @@
+@@ -122,7 +122,7 @@ we're all set::
  
  So that was simple, right?  Well... there's one gotcha that makes things a bit
  harder to debug sometimes.  When you attempt to write non-:term:`ASCII`
@@ -66,9 +76,11 @@ Bug: https://fedorahosted.org/kitchen/ticket/8
  But what happens when you use :func:`print`?  The terminal is a file-like object
  so it should raise an exception right?  The answer to that is....
  *sometimes*:
+diff --git a/kitchen/i18n/__init__.py b/kitchen/i18n/__init__.py
+index 29561a2..a7eacf8 100644
 --- a/kitchen/i18n/__init__.py
 +++ b/kitchen/i18n/__init__.py
-@@ -251,8 +251,8 @@
+@@ -251,8 +251,8 @@ class DummyTranslations(object, gettext.NullTranslations):
      def _reencode_if_necessary(self, message, output_encoding):
          '''Return a byte string that's valid in a specific charset.
  
@@ -79,7 +91,7 @@ Bug: https://fedorahosted.org/kitchen/ticket/8
              output encoding.
          '''
          valid = False
-@@ -668,7 +668,7 @@
+@@ -668,7 +668,7 @@ def get_translation_object(domain, localedirs=tuple(), languages=None,
          objects by default.  These are superior to the
          :class:`gettext.GNUTranslations` and :class:`gettext.NullTranslations`
          objects because they are consistent in the string type they return and
@@ -88,9 +100,11 @@ Bug: https://fedorahosted.org/kitchen/ticket/8
          :exc:`UnicodeError`.
      2. This function takes multiple directories to search for
          :term:`message catalogs`.
+diff --git a/kitchen/pycompat25/collections/_defaultdict.py b/kitchen/pycompat25/collections/_defaultdict.py
+index 0560a3b..639af29 100644
 --- a/kitchen/pycompat25/collections/_defaultdict.py
 +++ b/kitchen/pycompat25/collections/_defaultdict.py
-@@ -73,7 +73,7 @@
+@@ -73,7 +73,7 @@ the defaultdict class provided by python-2.5 and above.
  
  # Pylint disabled messages
  #
@@ -99,6 +113,8 @@ Bug: https://fedorahosted.org/kitchen/ticket/8
  #   the format of that name.
  
  import types
+diff --git a/kitchen/text/display.py b/kitchen/text/display.py
+index 8624109..431815b 100644
 --- a/kitchen/text/display.py
 +++ b/kitchen/text/display.py
 @@ -3,7 +3,7 @@
@@ -119,7 +135,7 @@ Bug: https://fedorahosted.org/kitchen/ticket/8
  #   Toshio Kuratomi <toshio@fedoraproject.org>
  #   Tim Lauridsen
  #   Ville Skyttä
-@@ -210,7 +210,7 @@
+@@ -210,7 +210,7 @@ def _generate_combining_table():
      This is used to generate the :data:`~kitchen.text.display._COMBINING`
      table.
      '''
@@ -128,9 +144,11 @@ Bug: https://fedorahosted.org/kitchen/ticket/8
      # characters generated ifrom Unicode 5.0 data by:
      # "uniset +cat=Me +cat=Mn +cat=Cf -00AD +1160-11FF +200B c"
      markus_kuhn_combining_5_0 = (
+diff --git a/releaseutils.py b/releaseutils.py
+index d10d62e..ba5d8da 100755
 --- a/releaseutils.py
 +++ b/releaseutils.py
-@@ -35,7 +35,7 @@
+@@ -35,7 +35,7 @@ def main():
          shutil.rmtree('locale')
      except OSError, e:
          # If the error is that locale does not exist, we're okay.  We're
