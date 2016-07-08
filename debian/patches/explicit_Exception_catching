@@ -1,4 +1,4 @@
-From ed8b5f7485e7b707bd1aee95665254852ecf1848 Mon Sep 17 00:00:00 2001
+From a4a696f4dafa6b13c3898d01acafcf958956eb1f Mon Sep 17 00:00:00 2001
 From: Simon Chopin <chopin.simon@gmail.com>
 Date: Tue, 30 Apr 2013 18:27:15 +0200
 Subject: Make kitchen.text.converters.exception_to_* not swallow
@@ -8,14 +8,14 @@ Bug: https://fedorahosted.org/kitchen/ticket/9
 
 Patch-Name: explicit_Exception_catching
 ---
- kitchen/text/converters.py | 4 ++--
+ kitchen2/kitchen/text/converters.py | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/kitchen/text/converters.py b/kitchen/text/converters.py
-index 0eb57b4..a89d092 100644
---- a/kitchen/text/converters.py
-+++ b/kitchen/text/converters.py
-@@ -500,7 +500,7 @@ def exception_to_unicode(exc, converters=EXCEPTION_CONVERTERS):
+diff --git a/kitchen2/kitchen/text/converters.py b/kitchen2/kitchen/text/converters.py
+index eb518cb..d925313 100644
+--- a/kitchen2/kitchen/text/converters.py
++++ b/kitchen2/kitchen/text/converters.py
+@@ -499,7 +499,7 @@ def exception_to_unicode(exc, converters=EXCEPTION_CONVERTERS):
      for func in converters:
          try:
              msg = func(exc)
@@ -24,7 +24,7 @@ index 0eb57b4..a89d092 100644
              pass
          else:
              break
-@@ -532,7 +532,7 @@ def exception_to_bytes(exc, converters=EXCEPTION_CONVERTERS):
+@@ -531,7 +531,7 @@ def exception_to_bytes(exc, converters=EXCEPTION_CONVERTERS):
      for func in converters:
          try:
              msg = func(exc)
