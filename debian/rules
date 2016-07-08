@@ -1,23 +1,23 @@
 #!/usr/bin/make -f
-UPSTREAM= $(shell dpkg-parsechangelog | egrep '^Version: ' | sed -r 's/Version: (.*)-[0-9a-zA-Z~+.]+/\1/')
+
+export PYBUILD_NAME = kitchen
+export PYBUILD_BEFORE_TEST_python2 = cp -a {dir}/kitchen2/tests {build_dir}/tests
+export PYBUILD_BEFORE_TEST_python3 = cp -a {dir}/kitchen3/tests {build_dir}/tests
+export PYBUILD_AFTER_TEST = rm -rf {build_dir}/tests
+export LANGUAGE =
 
 %:
-	dh $@ --with python2
-override_dh_install:
-	dh_install
-	for py in $(shell pyversions -r); do \
-		rm -f debian/python-kitchen/usr/lib/$$py/dist-packages/kitchen-$(UPSTREAM).egg-info/SOURCES.txt; \
-	done
+	dh $@ --with python2,python3,sphinxdoc --buildsystem=pybuild
 
-override_dh_auto_test:
-ifeq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
-	mkdir -p debian/tmp/locales
-	localedef -f UTF-8 -i en_US ./debian/tmp/locales/en_US.UTF-8/
-	localedef -f UTF-8 -i pt_BR ./debian/tmp/locales/pt_BR.UTF-8/
-	localedef -f ISO-8859-1 -i pt_BR ./debian/tmp/locales/pt_BR.ISO-8859-1/
-	set -e; \
-	for py in $(shell pyversions -r); do \
-		LOCPATH=$(CURDIR)/debian/tmp/locales/ $$py /usr/bin/nosetests tests; \
-	done
-endif
-
+# override_dh_auto_test:
+# ifeq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
+# 	mkdir -p debian/tmp/locales
+# 	localedef -f UTF-8 -i en_US ./debian/tmp/locales/en_US.UTF-8/
+# 	localedef -f UTF-8 -i pt_BR ./debian/tmp/locales/pt_BR.UTF-8/
+# 	localedef -f ISO-8859-1 -i pt_BR ./debian/tmp/locales/pt_BR.ISO-8859-1/
+# 	LOCPATH=$(CURDIR)/debian/tmp/locales dh_auto_test
+#	set -e; \
+#	for py in $(shell pyversions -r); do \
+#		LOCPATH=$(CURDIR)/debian/tmp/locales/ $$py /usr/bin/nosetests tests; \
+#	done
+# endif
