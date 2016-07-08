@@ -2,10 +2,10 @@
 ed8b5f7485e7b707bd1aee95665254852ecf1848
 ed8b5f7485e7b707bd1aee95665254852ecf1848
 dfb12f36e61fa1e7eee95b322935d1ac6c0043e3
-dfb12f36e61fa1e7eee95b322935d1ac6c0043e3
-kitchen_1.1.1.orig.tar.gz
-89de2b9cc2d61710de8da66c55b50ffa0edbb034
-158105
+2faeac3a1a1d69a046284fba9565c28af0d8595b
+kitchen_1.2.4.orig.tar.gz
+82e86a30049bb92dd4e42e16ffd53557bd9e7c5f
+257399
 debianTag="debian/%e%v"
 patchedTag="patched/%e%v"
 upstreamTag="upstream/%e%u"
