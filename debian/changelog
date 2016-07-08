@@ -1,8 +1,12 @@
-kitchen (1.1.1-1~bpo70+2) UNRELEASED; urgency=medium
+kitchen (1.2.4-1) UNRELEASED; urgency=medium
 
+  [ Ondřej Nový ]
   * Fixed VCS URL (https)
 
- -- Ondřej Nový <novy@ondrej.org>  Tue, 29 Mar 2016 21:40:44 +0200
+  [ Sergio Durigan Junior ]
+  * Updating patches
+
+ -- Sergio Durigan Junior <sergiodj@sergiodj.net>  Fri, 08 Jul 2016 19:31:16 -0400
 
 kitchen (1.1.1-1~bpo70+1) wheezy-backports; urgency=low
 
