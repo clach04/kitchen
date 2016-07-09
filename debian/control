@@ -36,6 +36,8 @@ Description: Python library of containers, text and i18n helpers (Python 2)
    * a dictionary that treats unicode and str strings as different values
    * An helper function to change any non-list value into a single-element list
    * Tools to help deal with PEP386 version format
+ .
+ This package installs the library for Python 2.
 
 Package: python3-kitchen
 Architecture: all
@@ -50,3 +52,5 @@ Description: Python library of containers, text and i18n helpers (Python 3)
    * a dictionary that treats unicode and str strings as different values
    * An helper function to change any non-list value into a single-element list
    * Tools to help deal with PEP386 version format
+ .
+ This package installs the library for Python 3.
