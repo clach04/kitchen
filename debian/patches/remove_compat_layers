@@ -1,4 +1,4 @@
-From 7e18b88f80c37654a8001a8fffff5a4107af5175 Mon Sep 17 00:00:00 2001
+From 727e0eb7f33edfca9f1d18997fb2766a2dd3c9fd Mon Sep 17 00:00:00 2001
 From: Simon Chopin <chopin.simon@gmail.com>
 Date: Thu, 8 Oct 2015 09:26:23 -0700
 Subject: Remove the pycompat* submodules

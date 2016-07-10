@@ -1,4 +1,4 @@
-From d273a44568e6b1986ebae428b86c8b441cda03ed Mon Sep 17 00:00:00 2001
+From e99dd6fa948618015ec19ae1e7f4326e5bb63d21 Mon Sep 17 00:00:00 2001
 From: Simon Chopin <chopin.simon@gmail.com>
 Date: Tue, 30 Apr 2013 17:28:27 +0200
 Subject: Fix several typos
@@ -10,12 +10,12 @@ Patch-Name: fix_typos
  kitchen2/docs/api-pycompat27.rst                        | 2 +-
  kitchen2/docs/designing-unicode-apis.rst                | 2 +-
  kitchen2/docs/hacking.rst                               | 2 +-
- kitchen2/docs/unicode-frustrations.rst                  | 4 ++--
+ kitchen2/docs/unicode-frustrations.rst                  | 6 +++---
  kitchen2/kitchen/i18n/__init__.py                       | 6 +++---
  kitchen2/kitchen/pycompat25/collections/_defaultdict.py | 2 +-
  kitchen2/kitchen/text/display.py                        | 6 +++---
  releaseutils.py                                         | 2 +-
- 8 files changed, 13 insertions(+), 13 deletions(-)
+ 8 files changed, 14 insertions(+), 14 deletions(-)
 
 diff --git a/kitchen2/docs/api-pycompat27.rst b/kitchen2/docs/api-pycompat27.rst
 index 6ef6db1..9654b31 100644
@@ -55,7 +55,7 @@ index 530b7f2..5eb03c7 100644
  * Generally useful or needed for other pieces of kitchen.
  
 diff --git a/kitchen2/docs/unicode-frustrations.rst b/kitchen2/docs/unicode-frustrations.rst
-index c46e797..1588107 100644
+index c46e797..5175104 100644
 --- a/kitchen2/docs/unicode-frustrations.rst
 +++ b/kitchen2/docs/unicode-frustrations.rst
 @@ -33,7 +33,7 @@ In python-2.x, there's two types that deal with text.
@@ -76,6 +76,15 @@ index c46e797..1588107 100644
  But what happens when you use :func:`print`?  The terminal is a file-like object
  so it should raise an exception right?  The answer to that is....
  *sometimes*:
+@@ -539,7 +539,7 @@ a short example that uses many kitchen functions to do its work::
+             # Note that we do not let implici type conversion from str to
+             # unicode transform b_filename into a unicode string.  That might
+             # fail as python would use the ASCII filename.  Instead we use
+-            # to_unicode() to explictly transform in a way that we know will
++            # to_unicode() to explicitly transform in a way that we know will
+             # not traceback.
+             print _(u'filename: %s') % to_unicode(b_filename)
+             print _(u'file size: %s') % size
 diff --git a/kitchen2/kitchen/i18n/__init__.py b/kitchen2/kitchen/i18n/__init__.py
 index 80fe3ea..b694409 100644
 --- a/kitchen2/kitchen/i18n/__init__.py

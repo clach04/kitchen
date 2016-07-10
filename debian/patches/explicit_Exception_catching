@@ -1,4 +1,4 @@
-From a4a696f4dafa6b13c3898d01acafcf958956eb1f Mon Sep 17 00:00:00 2001
+From 85b7e2bd2676a9a58bee2f088ee23f99b5666abe Mon Sep 17 00:00:00 2001
 From: Simon Chopin <chopin.simon@gmail.com>
 Date: Tue, 30 Apr 2013 18:27:15 +0200
 Subject: Make kitchen.text.converters.exception_to_* not swallow

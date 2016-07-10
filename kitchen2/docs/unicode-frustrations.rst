@@ -539,7 +539,7 @@ a short example that uses many kitchen functions to do its work::
             # Note that we do not let implici type conversion from str to
             # unicode transform b_filename into a unicode string.  That might
             # fail as python would use the ASCII filename.  Instead we use
-            # to_unicode() to explictly transform in a way that we know will
+            # to_unicode() to explicitly transform in a way that we know will
             # not traceback.
             print _(u'filename: %s') % to_unicode(b_filename)
             print _(u'file size: %s') % size
