@@ -9,3 +9,12 @@ export LANGUAGE =
 
 %:
 	dh $@ --with python2,python3,sphinxdoc --buildsystem=pybuild
+
+override_dh_auto_build:
+	dh_auto_build
+# Docs from kitchen2 and kitchen3 are basically the same, so we just
+# use the ones from kitchen2.
+	PYTHONPATH=$(CURDIR)/kitchen2/ http_proxy='127.0.0.1:9' \
+		sphinx-build -N -bhtml kitchen2/docs/ kitchen2/docs/_build/html
+	PYTHONPATH=$(CURDIR)/kitchen2/ http_proxy='127.0.0.1:9' \
+		sphinx-build -N -bman kitchen2/docs/ kitchen2/docs/_build/man
