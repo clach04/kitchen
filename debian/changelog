@@ -1,10 +1,22 @@
-kitchen (1.2.4-1) UNRELEASED; urgency=medium
+kitchen (1.2.4-1) unstable; urgency=medium
 
   [ Ondřej Nový ]
   * Fixed VCS URL (https)
 
   [ Sergio Durigan Junior ]
-  * Updating patches
+  * Updating package to new upstream release.
+  * Improve debian/rules, simplifying the testsuite run part, and
+    generating documentation for the package.  Also, use pybuild as our
+    buildsystem now.  (Closes: #749208)
+  * Improve and revamp debian/control, including new build dependencies, a
+    Python 3 and a documentation packages.  Bump Standards to latest version.
+  * Including myself in the list of uploaders.
+  * Rewrite debian/watch, bumping the version to 4 and using github as the
+    source for the tarball (needed because the tarball from PyPi does not
+    include documentation).
+  * Regenerate patches, deleting what has been upstream'ed and expanding
+    existing patches to cover for the new Python 3 code.
+  * Update debian/copyright with copyright information for new files.
 
  -- Sergio Durigan Junior <sergiodj@sergiodj.net>  Fri, 08 Jul 2016 19:31:16 -0400
 
