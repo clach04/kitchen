@@ -4,6 +4,8 @@ from nose import tools
 import os
 import types
 import warnings
+from kitchen.pycompat24.sets import add_builtin_set
+add_builtin_set()
 
 def logit(msg):
     log = open('/var/tmp/test.log', 'a')
@@ -110,7 +112,7 @@ class Test__all__(object):
         For each module, check that it has an __all__
         '''
         # Blacklisted modules and packages
-        blacklist = set([ ])
+        blacklist = set([])
 
         for path, modname in [m for m in self.walk_modules(self.lib_dir, '')
                 if m[1] not in blacklist]:
@@ -142,7 +144,7 @@ class Test__all__(object):
         For each name in module's __all__, check that it exists
         '''
         # Blacklisted modules and packages
-        blacklist = set([ ])
+        blacklist = set([])
 
         for path, modname in [m for m in self.walk_modules(self.lib_dir, '')
                 if m[1] not in blacklist]:

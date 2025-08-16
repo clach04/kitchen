@@ -8,12 +8,12 @@
 # terms of the GNU Lesser General Public License as published by the Free
 # Software Foundation; either version 2.1 of the License, or (at your option)
 # any later version.
-# 
+#
 # kitchen is distributed in the hope that it will be useful, but WITHOUT ANY
 # WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for
 # more details.
-# 
+#
 # You should have received a copy of the GNU Lesser General Public License
 # along with kitchen; if not, see <http://www.gnu.org/licenses/>
 #
@@ -295,8 +295,8 @@ class DummyTranslations(object, gettext.NullTranslations):
     def _reencode_if_necessary(self, message, output_encoding):
         '''Return a byte string that's valid in a specific charset.
 
-        .. warning:: This method may mangle the message if the input encoding
-            is not known or the message isn't representable in the chosen
+        .. warning:: This method may mangle the message if the inpput encoding
+            is not known or the message isn't represntable in the chosen
             output encoding.
         '''
         valid = False
@@ -444,7 +444,7 @@ class NewGNUTranslations(DummyTranslations, gettext.GNUTranslations):
     2) :class:`gettext.GNUTranslations` can return byte :class:`str` from
        :meth:`gettext.GNUTranslations.ugettext` and :class:`unicode`
        strings from the other :meth:`~gettext.GNUTranslations.gettext`
-       methods if the message being translated is the wrong type 
+       methods if the message being translated is the wrong type
 
     When byte :class:`str` are returned, the strings will be encoded
     according to this algorithm:
@@ -721,7 +721,7 @@ def get_translation_object(domain, localedirs=tuple(), languages=None,
         objects by default.  These are superior to the
         :class:`gettext.GNUTranslations` and :class:`gettext.NullTranslations`
         objects because they are consistent in the string type they return and
-        they fix several issues that can cause the |stdlib|_ objects to throw
+        they fix several issues that can causethe |stdlib|_ objects to throw
         :exc:`UnicodeError`.
     2. This function takes multiple directories to search for
         :term:`message catalogs`.
@@ -854,7 +854,7 @@ def easy_gettext_setup(domain, localedirs=tuple(), use_unicode=True):
         for plurals
 
     Setting up :mod:`gettext` can be a little tricky because of lack of
-    documentation.  This function will setup :mod:`gettext`  using the 
+    documentation.  This function will setup :mod:`gettext`  using the
     `Class-based API
     <http://docs.python.org/library/gettext.html#class-based-api>`_ for you.
     For the simple case, you can use the default arguments and call it like

@@ -3,6 +3,9 @@
 import unittest
 from nose import tools
 
+from kitchen.pycompat24.sets import add_builtin_set
+add_builtin_set()
+
 from kitchen import collections
 
 def test_strict_dict_get_set():

@@ -50,6 +50,9 @@ import codecs
 import warnings
 import xml.sax.saxutils
 
+from kitchen.pycompat24 import sets
+sets.add_builtin_set()
+
 from kitchen.text.exceptions import ControlCharError, XmlEncodeError
 from kitchen.text.misc import guess_encoding, html_entities_unescape, \
         isbytestring, isunicodestring, process_control_chars
@@ -499,7 +502,7 @@ def exception_to_unicode(exc, converters=EXCEPTION_CONVERTERS):
     for func in converters:
         try:
             msg = func(exc)
-        except Exception:
+        except:
             pass
         else:
             break
@@ -531,7 +534,7 @@ def exception_to_bytes(exc, converters=EXCEPTION_CONVERTERS):
     for func in converters:
         try:
             msg = func(exc)
-        except Exception:
+        except:
             pass
         else:
             break
@@ -690,7 +693,7 @@ def unicode_to_xml(string, encoding='utf-8', attrib=False,
 
     # Escape characters that have special meaning in xml
     if attrib:
-        string = xml.sax.saxutils.escape(string, entities={'"':"&quot;"})
+        string = xml.sax.saxutils.escape(string, entities={'"': "&quot;"})
     else:
         string = xml.sax.saxutils.escape(string)
 

@@ -272,7 +272,7 @@ version.
 Criteria for subpackages in kitchen
 ===================================
 
-Subpackages within kitchen should meet these criteria:
+Supackages within kitchen should meet these criteria:
 
 * Generally useful or needed for other pieces of kitchen.
 
